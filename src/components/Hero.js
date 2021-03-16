@@ -3,9 +3,6 @@ import {useStaticQuery,  graphql} from 'gatsby';
 import {Link} from 'gatsby';
 import { StaticImage } from "gatsby-plugin-image"
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-
 import Carousel from './Carousel';
 
 function Hero() {
@@ -33,7 +30,6 @@ function Hero() {
     
 const {title, content, heroSlider} = data.allContentfulHero.edges[0].node;
   
-console.log(title, content, heroSlider);
   
     return (
         <section className='hero-banner'>
@@ -76,9 +72,11 @@ console.log(title, content, heroSlider);
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                {/* <i className='fab fa-facebook-f'></i> */}
+                <i className='fab fa-facebook-f'></i>
 
-                <FontAwesomeIcon icon="apple" />
+
+
+
               </a>
             </li>
             <li>

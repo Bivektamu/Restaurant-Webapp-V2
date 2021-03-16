@@ -1,0 +1,239 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  color: $dark-blue;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $dark-blue;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+p {
+  color: $black;
+  margin-bottom: 2rem;
+  font-family: 'Poppins';
+}
+
+.dark-blue {
+  color: $dark-blue;
+}
+
+.spinner {
+  width: 100%;
+  padding: 100px 0;
+}
+
+#main,
+footer {
+  width: calc(100% - 18rem);
+}
+
+section {
+  display: block;
+  overflow: auto;
+  max-width: 144rem;
+  width: calc(100% - 20rem);
+  margin: auto;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.button {
+  display: inline-block;
+  background-color: $orange;
+  cursor: pointer;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 30px;
+  padding: 9px 25px;
+  text-transform: capitalize;
+  border: 1px solid $orange;
+  font-family: 'Josefin Sans';
+
+  @include transition();
+}
+
+.button:hover {
+  background-color: transparent;
+  color: $orange;
+  border: 1px solid;
+}
+
+.button-header {
+  padding: 7px 26px;
+  border-radius: 0;
+}
+
+.button-hero {
+  align-self: center;
+}
+
+.button-shadow {
+  box-shadow: -5px 8px 20px 0px rgba(229, 16, 2, 0.15);
+}
+
+.button-contactForm {
+  border-radius: 5px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.l-heading {
+  font-size: 6.5rem;
+  font-weight: 600;
+  margin-bottom: 5rem;
+  line-height: 0.929;
+  font-family: 'Josefin Sans';
+}
+
+.heading {
+  font-size: 4.5rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+  line-height: 0.929;
+  font-family: 'Josefin Sans';
+}
+
+.small-heading {
+  color: $black;
+  margin-bottom: 2rem;
+  display: block;
+  font-weight: 400;
+}
+
+.title {
+  font-size: 2.4rem;
+  margin: 2rem 0;
+  text-transform: capitalize;
+}
+
+.grid {
+  display: grid;
+  display: -moz-grid;
+  display: -ms-grid;
+}
+
+.grid-3,
+.grid-2 {
+  display: grid;
+  display: -moz-grid;
+  display: -ms-grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 3rem;
+  grid-row-gap: 3rem;
+}
+
+.grid-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.flex-2 {
+  display: flex;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  justify-content: space-between;
+}
+
+.ml-2 {
+  margin-left: 3rem;
+}
+
+.back {
+  color: $orange;
+  margin-bottom: 2rem;
+  display: block;
+  font-weight: 500;
+}
+
+.slick-slider {
+  .slick-dots {
+    z-index: 1;
+
+    li {
+      button {
+        width: 2rem;
+        height: 2rem;
+        position: relative;
+        border-radius: 100%;
+
+        &:before {
+          width: 1.5rem;
+          height: 1.5rem;
+          margin: auto;
+          left: 0;
+          right: 0;
+          font-size: 1rem;
+          top: -1px;
+        }
+      }
+
+      &.slick-active {
+        button {
+          border: 2px solid $orange;
+
+          &:before {
+            color: $orange;
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  border: none;
+  background: none;
+  font-size: 3rem;
+  cursor: pointer;
+  color: $orange;
+}
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: calc(100% - 18rem);
+  background: rgba(255, 255, 255, 0.5);
+
+  .modal-wrapper {
+    position: relative;
+    border: 1px solid $irish-blue;
+    padding: 10rem;
+    text-align: center;
+    border-radius: 5px;
+    background: $white;
+    @include boxshadow;
+
+    .heading {
+      color: $orange;
+    }
+
+  }
+}

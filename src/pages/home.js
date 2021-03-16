@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import Hero from '../components/Hero';
+import Popular from '../components/Popular';
 
 const Home = () => {
   
@@ -14,6 +15,8 @@ const Home = () => {
 
   <Layout>
     <Hero />
+    <Popular />
+
 
     <SEO title="Home" />
     <h1>Hi people</h1>

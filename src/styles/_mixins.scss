@@ -1,0 +1,33 @@
+@mixin transition($args: all 0.3s ease 0s) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin filter($filter-value) {
+  filter: ($filter-value);
+  -o-filter: ($filter-value);
+  -ms-filter: ($filter-value);
+  -moz-filter: ($filter-value);
+  -webkit-filter: ($filter-value);
+}
+
+@mixin boxshadow() {
+  box-shadow: 0px 15px 30px rgba(115, 113, 127, 0.4);
+}
+
+@mixin grid($col, $col-gap, $row-gap) {
+  display: grid;
+  grid-template-columns: $col;
+  grid-column-gap: $col-gap;
+  grid-row-gap: $row-gap;
+}
+
+@mixin flex($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: wrap;
+
+}

@@ -1,11 +1,9 @@
 import React from 'react';
 // import uuid from 'uuid';
-import { GatsbyImage } from "gatsby-plugin-image";
 
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
 
 const Carousel = ({ slides }) => {
   const settings = {
@@ -21,12 +19,12 @@ const Carousel = ({ slides }) => {
     autoplay: true
   };
 
+  const carousel_Slides = slides.map(({ link, _id }) => {
 
-  const carousel_Slides = slides.map(({ gatsbyImageData, id }) => {
 
     return (
-      <div key={id}>
-        <GatsbyImage image={gatsbyImageData} alt='Slide' />
+      <div key={_id}>
+        <img src={link} alt='Slide' />
       </div>
     );
   });
