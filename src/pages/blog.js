@@ -8,9 +8,8 @@ import Layout from "../components/layout"
 import Hero from '../components/Hero';
 import Popular from '../components/Popular';
 import Offer from '../components/layout/Offer';
-import Reservation from '../components/layout/Reservation';
 
-const Home = () => {
+const Blog = () => {
   
   return (
 
@@ -19,9 +18,12 @@ const Home = () => {
     <Hero />
     <Popular />
     <Offer />
-    <Reservation />
+
+
+
+
 
   </Layout>
 )
   }
-export default Home
+export default Blog

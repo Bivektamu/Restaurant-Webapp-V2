@@ -45,12 +45,8 @@ header {
   #logo {
     width: 100%;
     display: block;
-
-    img {
-      width: 10rem;
-      display: block;
-      margin: auto;
-    }
+    text-align: center;
+    
   }
 
   .nav-wrapper {
@@ -85,8 +81,8 @@ header {
             font-family: 'Poppins';
             @include transition();
 
-            img {
-              padding-right: 15px;
+            .img {
+              margin-right: 15px;
               vertical-align: middle;
               display: inline-block;
               @include transition();

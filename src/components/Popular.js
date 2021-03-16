@@ -43,8 +43,6 @@ function Popular() {
 
   const {title, heading,slug} = data.allContentfulSection.edges[0].node;
   const popularMenus = data.allContentfulMenuItems.edges;
-
-  console.log(popularMenus);
   
   return (
     <section id='popular'>

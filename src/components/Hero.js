@@ -7,25 +7,25 @@ import Carousel from './Carousel';
 
 function Hero() {
     const data = useStaticQuery(graphql`
-    query MyQuery {
-      allContentfulHero(filter: {slug: {eq: "page-home"}}) {
-        edges {
-          node {
-            slug
-            title
-            content {
-              content
-            }
-            heroSlider {
-                id
-                gatsbyImageData
-            }
-          }
-        }
-      }
-    }
+                    query MyQuery {
+                      allContentfulHero(filter: {slug: {eq: "page-home"}}) {
+                        edges {
+                          node {
+                            slug
+                            title
+                            content {
+                              content
+                            }
+                            heroSlider {
+                                id
+                                gatsbyImageData
+                            }
+                          }
+                        }
+                      }
+                    }
      
-    `)
+                  `);
 
     
 const {title, content, heroSlider} = data.allContentfulHero.edges[0].node;

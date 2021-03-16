@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
     <>
       <Header siteTitle={`Title`} />
      
-        <main>{children}</main>
+        <main id="main">{children}</main>
         <footer
           style={{
             marginTop: `2rem`,
