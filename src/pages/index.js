@@ -9,17 +9,18 @@ import Hero from '../components/Hero';
 import Popular from '../components/Popular';
 import Offer from '../components/layout/Offer';
 import Reservation from '../components/layout/Reservation';
+import RecentBlog from "../components/RecentBlog";
 
 const Home = () => {
   
   return (
-
 
   <Layout>
     <Hero />
     <Popular />
     <Offer />
     <Reservation />
+    <RecentBlog />
 
   </Layout>
 )

@@ -1,3 +1,9 @@
+const dotenv = require('dotenv');
+
+if(process.env.NODE_ENV !== 'production') {
+  dotenv.config()
+}
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -8,8 +14,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-contentful',
       options: {
-        spaceId: 'qn6l84nucpj7',
-        accessToken: 'dgaXSFR2mcmkZzsMgvC7iNkXo39nGOXYfCh62SE2728'
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
       }
     },
     

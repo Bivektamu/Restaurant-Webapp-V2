@@ -1,5 +1,6 @@
 import React from 'react'
 import {useStaticQuery,  graphql} from 'gatsby';
+
 import BackgroundImage from 'gatsby-background-image'
 import {Link} from 'gatsby';
 
@@ -14,10 +15,13 @@ function Reservation() {
                                     heading
                                     featuredImage {
                                         fluid {
-                                            base64
                                             tracedSVG
                                             srcWebp
                                             srcSetWebp
+                                            aspectRatio
+                                            sizes
+                                            src
+                                            srcSet
                                         }
                                     }
                                 }
@@ -29,14 +33,13 @@ function Reservation() {
 
 
     const { title, heading, featuredImage } = data.allContentfulSection.edges[0].node;
-    
-    console.log(featuredImage.fluid);
+
 
     return (
         <BackgroundImage
             Tag="section"
             id="reservation"
-            fluid={featuredImage.fluid}
+            fluid={featuredImage.fluid} 
             >
               <div className='wrapper'>
                   <h3>{title}</h3>
