@@ -14,7 +14,6 @@ function Popular() {
       edges {
         node {
           slug
-
           title
           heading
         }

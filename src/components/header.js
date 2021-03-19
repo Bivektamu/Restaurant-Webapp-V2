@@ -9,7 +9,7 @@ const Header = () => {
   const headerRef = useRef(null);
 
   const toggleNav = e => {
-    headerRef.current.classList.toggle('active_nav');
+    // headerRef.current.classList.toggle('active_nav');
   };
 
 
@@ -33,10 +33,10 @@ const Header = () => {
         <div className='nav-wrapper'>
           <div className='navbar'>
             <ul className='navbar-nav'>
+
               <li className='nav-item'>
                 <Link
-                  // onClick={e => toggleNav(e)}
-                  exact
+                  onClick={e => toggleNav(e)}
                   className='nav-link'
                   activeClassName="active"
                   to='/'
@@ -53,8 +53,7 @@ const Header = () => {
               
               <li className='nav-item'>
                 <Link
-                  // onClick={e => toggleNav(e)}
-                  exact
+                  onClick={e => toggleNav(e)}
                   className='nav-link'
                   activeClassName="active"
                   to='/blog'

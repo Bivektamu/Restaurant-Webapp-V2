@@ -1,5 +1,8 @@
 import React from 'react'
 import {useStaticQuery,  graphql} from 'gatsby';
+import Card from './layout/Card';
+
+
 
 function RecentBlog() {
 
@@ -7,25 +10,34 @@ function RecentBlog() {
         query RecentNews {
             allContentfulSection(filter: {page: {eq: "Home"}, slug: {eq: "recent-news"}}) {
                 edges {
-                node {
-                    slug
-                    title
-                    heading
-                }
+                    node {
+                        slug
+                        title
+                        heading
+                    }
                 }
             }
             allContentfulPost(limit: 3) {
                 edges {
-                node {
-                    id
-                    title
-                    content {
-                    raw
+                    node {
+                        id
+                        title
+                        featuredImage {
+                            gatsbyImageData
+                        }
+                        content {
+                            raw
+                            references {
+                                    ... on ContentfulAsset {
+                                        __typename
+                                        contentful_id
+                                        gatsbyImageData
+                                    }
+                                
+                                }
+                            }
+                        
                     }
-                    featuredImage {
-                    gatsbyImageData
-                    }
-                }
                 }
             }
         }
@@ -34,10 +46,15 @@ function RecentBlog() {
 
     // console.log(data);
 
+    const recent = data.allContentfulPost.edges
+    const {title, heading} = data.allContentfulSection.edges[0].node
+
     return (
-        <div>
-            RecentBlog
-        </div>
+        <section id='blog'>
+            <h5 className='small-heading'>{title}</h5>
+            <h2 className='heading'>{heading}</h2>
+            <Card from='blog' items={recent} />
+        </section>
     )
 }
 
