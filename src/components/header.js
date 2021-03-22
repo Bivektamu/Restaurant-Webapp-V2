@@ -36,7 +36,7 @@ const Header = () => {
 
               <li className='nav-item'>
                 <Link
-                  onClick={e => toggleNav(e)}
+                  
                   className='nav-link'
                   activeClassName="active"
                   to='/'
@@ -53,18 +53,18 @@ const Header = () => {
               
               <li className='nav-item'>
                 <Link
-                  onClick={e => toggleNav(e)}
+                  
                   className='nav-link'
                   activeClassName="active"
-                  to='/blog'
+                  to='/about'
                 >
                   <StaticImage
-                    src="../images/nav/nav-icon1.png"
+                    src="../images/nav/nav-icon2.png"
                     alt="Icon"
                     className="img"
                     width={20}
                   />
-                  Blog
+                  About
                 </Link>
               </li>
 

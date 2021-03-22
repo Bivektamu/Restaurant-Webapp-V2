@@ -9,6 +9,7 @@ import * as React from "react"
 import PropTypes from "prop-types"
 
 import Header from "./header"
+import Footer from "./Footer"
 import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -20,15 +21,7 @@ const Layout = ({ children }) => {
       <Header siteTitle={`Title`} />
      
         <main id="main">{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
+        <Footer />
     </>
   )
 }

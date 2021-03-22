@@ -5,10 +5,12 @@ import { StaticImage } from "gatsby-plugin-image"
 
 import Carousel from './Carousel';
 
-function Hero() {
+const Hero = ({slug}) => {
+
+    console.log(slug);
     const data = useStaticQuery(graphql`
                     query MyQuery {
-                      allContentfulHero(filter: {slug: {eq: "page-home"}}) {
+                      allContentfulHero {
                         edges {
                           node {
                             slug
@@ -27,8 +29,13 @@ function Hero() {
      
                   `);
 
+      let heroContent = data.allContentfulHero.edges.filter(item => item.node.slug === 'page-home')
+      
+
+      console.log(heroContent);
+
     
-const {title, content, heroSlider} = data.allContentfulHero.edges[0].node;
+const {title, content, heroSlider} = heroContent[0].node;
   
   
     return (

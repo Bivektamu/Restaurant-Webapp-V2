@@ -21,8 +21,12 @@ function Card({from, items}) {
         }
       }
       // var output = renderRichText(content)
-      var output = renderRichText(content, options)
-      
+      const output = renderRichText(content)
+      const {props} = output[0];
+      var excerpt = (props.children[0]);
+      if(excerpt.length > 70) {
+        excerpt = excerpt.substring(0,70) + "...";
+      }
     }
 
 
@@ -33,9 +37,12 @@ function Card({from, items}) {
 
           <h2 className='title'>{menuName ? menuName:title}</h2>
           {description && <p>{description && description.description}</p>}
-          <div>
-           {output && output}
-           </div>
+          {excerpt && <>
+            <div>
+              {excerpt}
+            </div>
+          </>}
+          
         </div>
       </div>
     );
