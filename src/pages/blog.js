@@ -5,8 +5,8 @@ import * as React from "react"
 import Layout from "../components/layout"
 // import SEO from "../components/seo"
 
-import Hero from '../components/Hero';
-import Popular from '../components/Popular';
+import Hero from '../components/template-parts/Hero';
+import Popular from '../components/template-parts/Popular';
 import Offer from '../components/layout/Offer';
 
 const Blog = () => {

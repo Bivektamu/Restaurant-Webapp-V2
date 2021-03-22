@@ -5,22 +5,20 @@ import * as React from "react"
 import Layout from "../components/layout"
 // import SEO from "../components/seo"
 
-import Hero from '../components/Hero';
-import Popular from '../components/Popular';
-import Offer from '../components/layout/Offer';
+import Hero from '../components/template-parts/Hero';
+import Chefs from "../components/template-parts/Chefs";
 import Reservation from '../components/layout/Reservation';
-import RecentBlog from "../components/RecentBlog";
+import Testimonials from "../components/template-parts/Testimonials";
 
 const About = () => {
   
   return (
 
   <Layout>
-    <Hero slug='page-home' />
-    <Popular />
-    <Offer />
+    <Hero slug='page-about' />
+    <Chefs />
+    <Testimonials />
     <Reservation />
-    <RecentBlog />
 
   </Layout>
 )

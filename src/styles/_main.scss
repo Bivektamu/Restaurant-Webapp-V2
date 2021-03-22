@@ -394,16 +394,15 @@ header {
     .grid-2 {
       grid-template-columns: 1fr 3fr;
 
-      &>* {
-        padding: 3rem;
-      }
+      
 
-      img {
+      .wrap {
         border-right: 2px solid $black;
       }
 
-      .car-info {
+      .car-info, .wrap {
         padding: 3rem;
+        display: block;
 
         p {
           font-size: 2rem;

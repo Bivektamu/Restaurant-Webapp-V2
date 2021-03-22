@@ -1,6 +1,6 @@
 import React from 'react'
 import {useStaticQuery,  graphql} from 'gatsby';
-import Card from './layout/Card';
+import Card from '../layout/Card';
 
 
 
@@ -47,13 +47,13 @@ function RecentBlog() {
     // console.log(data);
 
     const recent = data.allContentfulPost.edges
-    const {title, heading} = data.allContentfulSection.edges[0].node
+    const {title, heading, slug} = data.allContentfulSection.edges[0].node
 
     return (
         <section id='blog'>
             <h5 className='small-heading'>{title}</h5>
             <h2 className='heading'>{heading}</h2>
-            <Card from='blog' items={recent} />
+            <Card slug={slug} items={recent} />
         </section>
     )
 }

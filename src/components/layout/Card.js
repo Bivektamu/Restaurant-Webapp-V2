@@ -3,24 +3,21 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 
-function Card({from, items}) {
+function Card({slug, items}) {
+
+  var cardTitle, cardInfo;
 
   const cards = items.map(item => {
-    const { id, menuName, featuredImage, description } = item.node;
-    if(from === 'blog') {
-      var {title, content} = item.node
 
-      const options = {
-        renderNode: {
-          [BLOCKS.EMBEDDED_ASSET]: node => {
-            console.log(node);
-            return (
-              <GatsbyImage className="block"  image={node.data.target.gatsbyImageData} alt='Popular Menu Items' />
-            )
-          }
-        }
-      }
-      // var output = renderRichText(content)
+    const { id, menuName, featuredImage, description } = item.node;
+    
+    cardTitle = menuName;
+    cardInfo = description && description.description;
+
+
+    if(slug === 'recent-news') {
+      var {title, content} = item.node
+      cardTitle = title
       const output = renderRichText(content)
       const {props} = output[0];
       var excerpt = (props.children[0]);
@@ -29,20 +26,62 @@ function Card({from, items}) {
       }
     }
 
+    if(slug === 'chefs') {
+      const { jobTitle, name, facebookPage, twitterPage, instagramPage, skypeId } = item.node;
+      cardTitle = name
+      cardInfo = jobTitle
+
+      var socialLinks = <>
+                <div className='social-links'>
+                <a
+                  href={facebookPage}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <i className='fab fa-facebook-f'></i>
+                </a>
+                <a
+                  href={twitterPage}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <i className='fab fa-twitter'></i>
+                </a>
+                <a
+                  href={instagramPage}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <i className='fab fa-instagram'></i>
+                </a>
+                <a
+                  href={skypeId}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <i className='fab fa-skype'></i>
+                </a>
+              </div>
+      </>
+    }
+
 
     return (
+
       <div key={id}>
         <GatsbyImage className="block"  image={featuredImage.gatsbyImageData} alt='Popular Menu Items' />
         <div className='wrapper'>
 
-          <h2 className='title'>{menuName ? menuName:title}</h2>
-          {description && <p>{description && description.description}</p>}
+          <h2 className='title'>{cardTitle && cardTitle}</h2>
+          {cardInfo && <p>{cardInfo && cardInfo}</p>}
           {excerpt && <>
             <div>
               {excerpt}
             </div>
           </>}
           
+          {socialLinks && socialLinks}
+
         </div>
       </div>
     );

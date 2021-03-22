@@ -7,7 +7,6 @@ import Carousel from './Carousel';
 
 const Hero = ({slug}) => {
 
-    console.log(slug);
     const data = useStaticQuery(graphql`
                     query MyQuery {
                       allContentfulHero {
@@ -28,32 +27,31 @@ const Hero = ({slug}) => {
                     }
      
                   `);
-
-      let heroContent = data.allContentfulHero.edges.filter(item => item.node.slug === 'page-home')
+      let heroContent = data.allContentfulHero.edges.filter(item => item.node.slug === slug)
       
 
-      console.log(heroContent);
 
     
 const {title, content, heroSlider} = heroContent[0].node;
-  
   
     return (
         <section className='hero-banner'>
       <div className='hero-wrapper'>
         <div className='hero-left'>
-          <h1 className='heading'>{title}</h1>
+          <h1 className='heading'>{title && title}</h1>
 
-            <div className='d-sm-flex flex-wrap'>
-                <Link
-                  className='button button-hero button-shadow'
-                  to='/booking'
-                >
-                  Book Now
-                </Link>
-            </div>
+          {slug === 'page-home' && <>
+              <div className='d-sm-flex flex-wrap'>
+                  <Link
+                    className='button button-hero button-shadow'
+                    to='/booking'
+                  >
+                    Book Now
+                  </Link>
+              </div>
+            </>}
 
-            <p>{content}</p>
+            <p>{content && content.content}</p>
 
          
           <ul className='hero-info d-none d-lg-block'>
@@ -80,10 +78,6 @@ const {title, content, heroSlider} = heroContent[0].node;
                 rel='noopener noreferrer'
               >
                 <i className='fab fa-facebook-f'></i>
-
-
-
-
               </a>
             </li>
             <li>
@@ -107,7 +101,7 @@ const {title, content, heroSlider} = heroContent[0].node;
           </ul>
         </div>
         <div className='hero-right'>
-          <Carousel slides={heroSlider} />
+          <Carousel slides={heroSlider&& heroSlider} />
         </div>
       </div>
     </section>
