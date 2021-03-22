@@ -435,10 +435,22 @@ header {
     &:hover {
       @include boxshadow();
       background: $white;
+      .round {
+        @include boxshadow();
+        @include transition();
+        transition-delay: 0.2s;
+
+      }
     }
 
     &>img {
       width: 100%;
+    }
+
+    .round {
+      width: 105px;
+      height: 105px;
+        border-radius: 100%;
     }
 
     .wrapper {

@@ -6,24 +6,19 @@ import Layout from "../components/layout"
 // import SEO from "../components/seo"
 
 import Hero from '../components/template-parts/Hero';
-import Popular from '../components/template-parts/Popular';
-import Offer from '../components/layout/Offer';
+import Reservation from '../components/layout/Reservation';
+import Menus from "../components/template-parts/Menus";
 
-const Blog = () => {
+const Menu = () => {
   
   return (
 
-
   <Layout>
-    <Hero />
-    <Popular />
-    <Offer />
-
-
-
-
+    <Hero slug="page-menu" />
+    <Menus />
+    <Reservation />
 
   </Layout>
 )
   }
-export default Blog
+export default Menu

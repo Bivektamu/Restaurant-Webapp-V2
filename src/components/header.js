@@ -36,7 +36,6 @@ const Header = () => {
 
               <li className='nav-item'>
                 <Link
-                  
                   className='nav-link'
                   activeClassName="active"
                   to='/'
@@ -53,7 +52,22 @@ const Header = () => {
               
               <li className='nav-item'>
                 <Link
-                  
+                  className='nav-link'
+                  activeClassName="active"
+                  to='/menu'
+                >
+                  <StaticImage
+                    src="../images/nav/nav-icon2.png"
+                    alt="Icon"
+                    className="img"
+                    width={20}
+                  />
+                  Menu
+                </Link>
+              </li>
+
+              <li className='nav-item'>
+                <Link
                   className='nav-link'
                   activeClassName="active"
                   to='/about'
