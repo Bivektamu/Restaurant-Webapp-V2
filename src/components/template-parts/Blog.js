@@ -58,7 +58,7 @@ const Blog = ({data: {blog}}) => {
 
             <section id='blog-details'>
                 <Link className='back' to='/blogs'>
-                    &lt;&nbsp;Back
+                    &lt;&nbsp;Back to Blogs
                 </Link>
                 <h3 className='title'>{title}</h3>
                 <GatsbyImage image={featuredImage.gatsbyImageData} />

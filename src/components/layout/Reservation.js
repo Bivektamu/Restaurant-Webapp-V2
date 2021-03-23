@@ -44,7 +44,7 @@ function Reservation() {
               <div className='wrapper'>
                   <h3>{title}</h3>
                  <h2 className="heading">{heading}</h2>
-                 <Link to='/booking'>
+                 <Link to='/book'>
                      <button className='button'>Book Table</button>
                  </Link>
              </div>

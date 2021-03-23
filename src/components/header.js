@@ -9,7 +9,7 @@ const Header = () => {
   const headerRef = useRef(null);
 
   const toggleNav = e => {
-    // headerRef.current.classList.toggle('active_nav');
+    headerRef.current.classList.toggle('active_nav');
   };
 
 

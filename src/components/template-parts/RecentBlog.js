@@ -20,6 +20,7 @@ function RecentBlog() {
             allContentfulPost(limit: 3) {
                 edges {
                     node {
+                        slug
                         id
                         title
                         featuredImage {

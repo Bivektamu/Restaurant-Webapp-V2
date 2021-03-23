@@ -2,10 +2,11 @@ import React from 'react'
 import { GatsbyImage } from "gatsby-plugin-image";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
+import {Link} from 'gatsby';
 
 function Card({slug, items}) {
 
-  var cardTitle, cardInfo;
+  var cardTitle, cardInfo, link;
 
   const cards = items.map(item => {
 
@@ -16,8 +17,11 @@ function Card({slug, items}) {
 
 
     if(slug === 'recent-news') {
-      var {title, content} = item.node
+      const {title, content} = item.node
+      
       cardTitle = title
+      link = item.node.slug;
+      
       const output = renderRichText(content)
       const {props} = output[0];
       var excerpt = (props.children[0]);
@@ -74,9 +78,12 @@ function Card({slug, items}) {
 
           <h2 className='title'>{cardTitle && cardTitle}</h2>
           {cardInfo && <p>{cardInfo && cardInfo}</p>}
-          {excerpt && <>
+
+          {link && <>
             <div>
-              {excerpt}
+              <Link to = {`/blogs/${link}`}>
+                Read More
+              </Link>
             </div>
           </>}
           

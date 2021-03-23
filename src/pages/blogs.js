@@ -7,6 +7,7 @@ import Layout from "../components/layout"
 
 import Reservation from '../components/layout/Reservation';
 import Hero from '../components/template-parts/Hero';
+import Card from '../components/layout/Card';
 
 const Blogs= ({data: {blogs} }) => {
   
@@ -16,8 +17,12 @@ const Blogs= ({data: {blogs} }) => {
 
     <Layout>
       <Hero slug="page-book" />
+      <section id='blog'>
+            <h2 className='heading'>Recent Blogs</h2>
+            <Card slug='recent-news' items={blogs.edges} />
+        </section>
       <Reservation />
-    </Layout>
+    </Layout> 
 )
   }
 export default Blogs
@@ -27,6 +32,7 @@ export const query = graphql`
         blogs: allContentfulPost {
               edges {
                 node {
+                  slug
                     id
                     title
                     content {
