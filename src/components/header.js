@@ -84,6 +84,23 @@ const Header = () => {
 
               <li className='nav-item'>
                 <Link
+                  id='blog-link'
+                  className='nav-link'
+                  activeClassName="active"
+                  to='/blogs'
+                >
+                  <StaticImage
+                    src="../images/nav/nav-blog.png"
+                    alt="Icon"
+                    className="img"
+                    width={20}
+                  />
+                  Blogs
+                </Link>
+              </li>
+
+              <li className='nav-item'>
+                <Link
                   className='nav-link'
                   activeClassName="active"
                   to='/about'

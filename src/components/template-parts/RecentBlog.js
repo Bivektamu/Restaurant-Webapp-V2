@@ -34,8 +34,8 @@ function RecentBlog() {
                                         gatsbyImageData
                                     }
                                 
-                                }
                             }
+                        }
                         
                     }
                 }

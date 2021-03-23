@@ -21,7 +21,6 @@ const Home = () => {
     <Offer />
     <Reservation />
     <RecentBlog />
-
   </Layout>
 )
   }
