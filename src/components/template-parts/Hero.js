@@ -56,16 +56,16 @@ const {title, content, heroSlider} = heroContent[0].node;
          
           <ul className='hero-info d-none d-lg-block'>
             <li>
-              <StaticImage src="../../public/icons/fas-service-icon.png" alt="icon" />
+              <StaticImage src = "../../images/icons/fas-service-icon.png" alt="icon" />
               <h4>Fast Service</h4>
             </li>
             <li>
-              <StaticImage src="../../public/icons/fresh-food-icon.png" alt="icon" />
+              <StaticImage src="../../images/icons/fresh-food-icon.png" alt="icon" />
               <h4>Fresh Food
 </h4>
             </li>
             <li>
-              <StaticImage src="../../public/icons/support-icon.png" alt="icon" />
+              <StaticImage src="../../images/icons/support-icon.png" alt="icon" />
               <h4>24/7 Support
 </h4>
             </li>

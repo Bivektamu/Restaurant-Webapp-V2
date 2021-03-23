@@ -41,7 +41,7 @@ const Header = () => {
                   to='/'
                 >
                   <StaticImage
-                    src="../images/nav/nav-icon1.png"
+                    src="../images/nav/nav-home.png"
                     alt="Icon"
                     className="img"
                     width={20}
@@ -57,7 +57,7 @@ const Header = () => {
                   to='/menu'
                 >
                   <StaticImage
-                    src="../images/nav/nav-icon2.png"
+                    src="../images/nav/nav-menu.png"
                     alt="Icon"
                     className="img"
                     width={20}
@@ -70,10 +70,26 @@ const Header = () => {
                 <Link
                   className='nav-link'
                   activeClassName="active"
+                  to='/book'
+                >
+                  <StaticImage
+                    src="../images/nav/nav-book.png"
+                    alt="Icon"
+                    className="img"
+                    width={20}
+                  />
+                  Book A Table
+                </Link>
+              </li>
+
+              <li className='nav-item'>
+                <Link
+                  className='nav-link'
+                  activeClassName="active"
                   to='/about'
                 >
                   <StaticImage
-                    src="../images/nav/nav-icon2.png"
+                    src="../images/nav/nav-about.png"
                     alt="Icon"
                     className="img"
                     width={20}
