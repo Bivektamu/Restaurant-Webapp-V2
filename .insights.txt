@@ -1,0 +1,4 @@
+GRAPHQL
+1.  Page queries vs static queries
+    Page queries used in top-level page components and can handle vaiables.
+

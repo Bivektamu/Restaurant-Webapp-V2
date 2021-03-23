@@ -63,7 +63,7 @@ const Blog = ({data: {blog}}) => {
                 <h3 className='title'>{title}</h3>
                 <GatsbyImage image={featuredImage.gatsbyImageData} />
                 {/* <p className='description'>{description}</p> */}
-                {body}
+                {body && body}
             </section>
         </Layout>
     )
