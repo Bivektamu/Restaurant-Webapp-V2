@@ -47,7 +47,6 @@ const Testimonials = () => {
     const {title, heading} = data.allContentfulSection.edges[0].node;
     const testimonials = data.allContentfulTestimonial.edges;
 
-console.log(testimonials);
 
     const settings = {
         swipeToSlide: true,
@@ -71,7 +70,7 @@ console.log(testimonials);
             <div key={id}>
               <div className='grid-2'>
                   <div className="wrap">
-                    <GatsbyImage image={avatar.gatsbyImageData} width={100} />
+                    <GatsbyImage image={avatar.gatsbyImageData} width={100} alt={name} />
                 </div>
                 <div className='car-info'>
                   <p>{testimonial.testimonial}</p>

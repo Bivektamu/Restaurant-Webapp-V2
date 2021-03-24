@@ -43,7 +43,7 @@ function Menus() {
         return (
           <div className='grid' key={id}>
             <div className="round-wrapper">
-                <GatsbyImage className="round" image={featuredImage.gatsbyImageData} />
+                <GatsbyImage className="round" image={featuredImage.gatsbyImageData} alt={menuName} />
             </div>
             <div className='wrapper'>
               <h3 className='title'>{menuName}</h3>

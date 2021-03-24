@@ -11,12 +11,10 @@ import Card from '../components/layout/Card';
 
 const Blogs= ({data: {blogs} }) => {
   
-  console.log(blogs);
-
   return (
 
     <Layout>
-      <Hero slug="page-book" />
+      <Hero slug="page-blogs" />
       <section id='blog'>
             <h2 className='heading'>Recent Blogs</h2>
             <Card slug='recent-news' items={blogs.edges} />

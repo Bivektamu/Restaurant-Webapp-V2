@@ -39,7 +39,8 @@ function Reservation() {
         <BackgroundImage
             Tag="section"
             id="reservation"
-            fluid={featuredImage.fluid} 
+            fluid={featuredImage.fluid}
+            alt={title}
             >
               <div className='wrapper'>
                   <h3>{title}</h3>
@@ -51,10 +52,6 @@ function Reservation() {
 
         </BackgroundImage> 
 
-
-    //     <section id='reservation' style={{ backgroundImage: `url(${image})` }}>
-    //        
-    //   </section>
 
     )
 }

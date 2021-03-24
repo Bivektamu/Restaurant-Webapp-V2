@@ -1,7 +1,5 @@
 import React from 'react'
 import { GatsbyImage } from "gatsby-plugin-image";
-import { BLOCKS, MARKS } from "@contentful/rich-text-types"
-import { renderRichText } from "gatsby-source-contentful/rich-text"
 import {Link} from 'gatsby';
 
 function Card({slug, items}) {
@@ -17,17 +15,11 @@ function Card({slug, items}) {
 
 
     if(slug === 'recent-news') {
-      const {title, content} = item.node
+      const {title} = item.node
       
       cardTitle = title
       link = item.node.slug;
-      
-      const output = renderRichText(content)
-      const {props} = output[0];
-      var excerpt = (props.children[0]);
-      if(excerpt.length > 70) {
-        excerpt = excerpt.substring(0,70) + "...";
-      }
+    
     }
 
     if(slug === 'chefs') {

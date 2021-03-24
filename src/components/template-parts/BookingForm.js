@@ -7,8 +7,8 @@ function BookingForm() {
         email: '',
         phone: '',
         date: '',
-        time: null,
-        person: null
+        time: '',
+        person: ''
         });
 
 

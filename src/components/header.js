@@ -15,13 +15,14 @@ const Header = () => {
 
     
   return (
-    <header className='fixed-menu' id='header'>
+    <header className='fixed-menu' id='header' ref={headerRef}>
       <div className='menu-header'>
           <Link id='logo' to='/'>
             <StaticImage
               src="../images/nav/logo.png"
               alt="A Gatsby astronaut"
               width={100}
+              formats={["auto", "webp", "avif"]}
             />
           </Link>
         </div>
@@ -112,6 +113,22 @@ const Header = () => {
                     width={20}
                   />
                   About
+                </Link>
+              </li>
+
+              <li className='nav-item'>
+                <Link
+                  className='nav-link'
+                  activeClassName="active"
+                  to='/contact'
+                >
+                  <StaticImage
+                    src="../images/nav/nav-contact.png"
+                    alt="Icon"
+                    className="img"
+                    width={20}
+                  />
+                  Contact
                 </Link>
               </li>
 
