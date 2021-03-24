@@ -23,10 +23,10 @@ function BookingForm() {
         fetch("/", {
             method: "POST",
             headers: {"Content-Type": "application/x-www-form-urlencoded"},
-            body: encode({"form-name":"bookform", ...formData}),
+            body: new URLSearchParams(formData).toString(),
         })
         .then(()=>alert("Success"))
-        .catch(() => alert(error));
+        .catch((error) => alert(error));
 
         e.preventDefault()
 
