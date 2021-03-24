@@ -39,6 +39,11 @@ function BookingForm() {
                 <h1 className='heading'>Make Reservation</h1>
 
                 <form method="POST" data-netlify="true" netlify-honeypot="bot-field" name="bookForm" onSubmit={()=> onSubmit(e)}>
+
+                    <input  
+                        type='hidden'
+                        name='form-name'
+                        value='bookForm' />
                     <div className='wrapper '>
                         <label htmlFor='Name'>Name</label>
                         <input
