@@ -19,10 +19,18 @@ function BookingForm() {
     const onChange = e =>
         setFormData({ ...formData, [e.target.name]: e.target.value });
 
-    // const onSubmit = e => {
-    //     e.preventDefault();
-    //     toggleModal(true);
-    // };
+    const onSubmit = e => {
+        fetch("/", {
+            method: "POST",
+            headers: {"Content-Type": "application/x-www-form-urlencoded"},
+            body: encode({"form-name":"bookform", ...formData}),
+        })
+        .then(()=>alert("Success"))
+        .catch(() => alert(error));
+
+        e.preventDefault()
+
+    };
 
 
 
@@ -30,7 +38,7 @@ function BookingForm() {
             <section id='booking-form'>
                 <h1 className='heading'>Make Reservation</h1>
 
-                <form method="POST" data-netlify="true" name="bookForm">
+                <form method="POST" data-netlify="true" netlify-honeypot="bot-field" name="bookForm" onSubmit={()=> onSubmit(e)}>
                     <div className='wrapper '>
                         <label htmlFor='Name'>Name</label>
                         <input
