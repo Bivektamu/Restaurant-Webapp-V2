@@ -30,7 +30,7 @@ function BookingForm() {
             <section id='booking-form'>
                 <h1 className='heading'>Make Reservation</h1>
 
-                <form method="post" netlify-honeypot="bot-field" data-netlify="true" name="bookForm">
+                <form method="POST" data-netlify="true" name="bookForm">
                     <div className='wrapper '>
                         <label htmlFor='Name'>Name</label>
                         <input
