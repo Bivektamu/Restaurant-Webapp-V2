@@ -1,5 +1,5 @@
 <p align="center">
-    <img alt="Restaurant Logo" src="/src/images/logo/icon.png" width="60" />
+    <img alt="Restaurant Logo" src="https://restaurantapp.netlify.app/static/82ea22131d7041d5b3cf6869b7736b6c/6d0de/logo.avif" width="60" />
 </p>
 <h1 align="center">
   RESTAURANT WEB APP
